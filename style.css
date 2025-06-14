@@ -81,7 +81,7 @@ html {
   --Container-Max-Width: 37.5rem; /* 600px */
   --Container-Inline-Padding: 1.5rem; /* 24px */
   --Header-Padding-Block: 2.5rem; /* 40px */
-  --Hero-Title-Padding: 1.125rem 1.5rem; /* 18px 24px */
+  --Header-Title-Padding: 1.125rem 1.5rem; /* 18px 24px */
   --Into-Section-Margin: 6.125rem 6rem; /* 98px 96px */
   --Intro-Title-Margin-Bottom: 1rem; /* 16px */
   --Creations-Section-Margin-Bottom: 6.125rem; /* 98px */
@@ -159,7 +159,7 @@ a {
   background: var(--hero-bg);
 
   padding-block: var(--Header-Padding-Block);
-  height: 650px;
+  height: 40.625rem;
 }
 .header > div {
   display: flex;
@@ -169,7 +169,7 @@ a {
 .nav {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
 
   transition: background 0.3s ease;
 }
@@ -185,13 +185,15 @@ a {
 
 /* Toggle Menu */
 .nav.active {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 3;
   background: var(--Black);
   padding-inline: var(--Container-Inline-Padding);
   padding-block: var(--Header-Padding-Block);
+  align-items: start;
 }
+
 .nav.active .nav__list {
   position: absolute;
   top: calc(var(--Header-Padding-Block) + 10rem);
@@ -205,8 +207,8 @@ a {
   text-transform: uppercase;
 }
 
-.hero__title {
-  padding: var(--Hero-Title-Padding);
+.header-title {
+  padding: var(--Header-Title-Padding);
   border: 2px solid var(--White);
   margin-block: auto;
   pointer-events: none;
@@ -289,7 +291,6 @@ a {
 }
 .see-all-btn {
   color: var(--Black);
-  background-color: transparent;
   font: var(--Preset-7);
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -353,7 +354,7 @@ a {
     --Container-Max-Width: 57.625rem; /* 922px */
     --Container-Inline-Padding: 5rem; /* 80px */
     --Header-Padding-Block: 4rem; /* 64px */
-    --Hero-Title-Padding: 2.5rem; /* 40px */
+    --Header-Title-Padding: 2.5rem; /* 40px */
     --Into-Section-Margin: 6rem; /* 96px */
     --Intro-Title-Margin-Bottom: 1.5rem; /* 24px */
     --Creations-Section-Margin-Bottom: 5.4375rem; /* 87px */
@@ -404,7 +405,7 @@ a {
 
     /* Spacing */
     --Container-Max-Width: 80rem; /* 1120px */
-    --Hero-Title-Padding: 2.625rem 2.5rem; /* 42px 40px */
+    --Header-Title-Padding: 2.625rem 2.5rem; /* 42px 40px */
     --Into-Section-Margin: 10rem 11.5rem; /* 160px 184px */
     --Creations-Section-Margin-Bottom: 11.375rem; /* 182px */
     --Creations-Title-Margin-Bottom: 5rem; /* 80px */
@@ -425,7 +426,7 @@ a {
   .menu-toggle-btn {
     display: none;
   }
-  .hero__title {
+  .header-title {
     align-self: flex-start;
   }
 
