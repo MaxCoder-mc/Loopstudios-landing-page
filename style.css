@@ -170,8 +170,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  transition: background 0.3s ease;
 }
 .nav__list {
   display: none;
@@ -182,16 +180,39 @@ a {
   border: none;
   cursor: pointer;
 }
+.header-title {
+  padding: var(--Header-Title-Padding);
+  border: 2px solid var(--White);
+  margin-block: auto;
+  pointer-events: none;
+}
 
-/* Toggle Menu */
-.nav.active {
+.overlay {
   position: absolute;
   inset: 0;
-  z-index: 3;
   background: var(--Black);
+  z-index: 3;
+
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.hidden {
+  z-index: 0;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+/* Toggle Menu */
+.nav.active {
+  align-items: start;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+
+  max-width: var(--Container-Max-Width);
   padding-inline: var(--Container-Inline-Padding);
   padding-block: var(--Header-Padding-Block);
-  align-items: start;
+  margin-inline: auto;
 }
 
 .nav.active .nav__list {
@@ -207,12 +228,6 @@ a {
   text-transform: uppercase;
 }
 
-.header-title {
-  padding: var(--Header-Title-Padding);
-  border: 2px solid var(--White);
-  margin-block: auto;
-  pointer-events: none;
-}
 /* ------------ INTRO ------------- */
 /* -------------------------------- */
 .intro {
@@ -338,7 +353,7 @@ a {
 
 /* Disable or reduce animations */
 @media (prefers-reduced-motion: reduce) {
-  :where(.see-all-btn, .card::before, a::before, .nav) {
+  :where(.see-all-btn, .card::before, a::before, .overlay) {
     animation: none;
     transition: none;
   }
