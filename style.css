@@ -335,6 +335,14 @@ a {
   gap: 1rem;
 }
 
+/* Disable or reduce animations */
+@media (prefers-reduced-motion: reduce) {
+  :where(.see-all-btn, .card::before, a::before, .nav) {
+    animation: none;
+    transition: none;
+  }
+}
+
 /* ******************************** */
 /*              Tablet              */
 /* ******************************** */
