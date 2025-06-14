@@ -49,6 +49,7 @@
           IMMERSIVE<br />EXPERIENCES<br />THAT DELIVER
         </h1>
       </div>
+      <div class="overlay hidden" role="presentation" aria-hidden="true"></div>
     </header>
 
     <main class="main container">
@@ -281,14 +282,17 @@
       const menuToggle = document.getElementById("menuToggle");
       const nav = document.querySelector(".nav");
       const menuImg = menuToggle.querySelector("img");
+      const overlay = document.querySelector(".overlay");
 
       function openMenu() {
         nav.classList.add("active");
+        overlay.classList.remove("hidden");
         menuImg.src = "./images/icon-close.svg";
         menuToggle.ariaLabel = "Close Menu";
       }
       function closeMenu() {
         nav.classList.remove("active");
+        overlay.classList.add("hidden");
         menuImg.src = "./images/icon-hamburger.svg";
         menuToggle.ariaLabel = "Open Menu";
       }
