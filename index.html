@@ -36,11 +36,16 @@
             <li><a href="#">Support</a></li>
           </ul>
 
-          <button id="menuToggle" class="menu-toggle-btn" type="button">
-            <img src="./images/icon-hamburger.svg" alt="Menu" />
+          <button
+            id="menuToggle"
+            class="menu-toggle-btn"
+            type="button"
+            aria-label="Menu"
+          >
+            <img src="./images/icon-hamburger.svg" />
           </button>
         </nav>
-        <h1 class="hero__title">
+        <h1 class="header-title">
           IMMERSIVE<br />EXPERIENCES<br />THAT DELIVER
         </h1>
       </div>
@@ -78,8 +83,8 @@
       <section class="creations">
         <h2>Our creations</h2>
 
-        <div class="creations-grid">
-          <div class="card">
+        <ul class="creations-grid">
+          <li class="card">
             <picture>
               <source
                 media="(max-width: 1199px)"
@@ -96,9 +101,9 @@
               />
             </picture>
             <h3 class="card__title">Deep<br />earth</h3>
-          </div>
+          </li>
 
-          <div class="card">
+          <li class="card">
             <picture>
               <source
                 media="(max-width: 1199px)"
@@ -115,9 +120,9 @@
               />
             </picture>
             <h3 class="card__title">Night<br />arcade</h3>
-          </div>
+          </li>
 
-          <div class="card">
+          <li class="card">
             <picture>
               <source
                 media="(max-width: 1199px)"
@@ -134,9 +139,9 @@
               />
             </picture>
             <h3 class="card__title">Soccer<br />team VR</h3>
-          </div>
+          </li>
 
-          <div class="card">
+          <li class="card">
             <picture>
               <source
                 media="(max-width: 1199px)"
@@ -153,9 +158,9 @@
               />
             </picture>
             <h3 class="card__title">The<br />grid</h3>
-          </div>
+          </li>
 
-          <div class="card">
+          <li class="card">
             <picture>
               <source
                 media="(max-width: 1199px)"
@@ -172,9 +177,9 @@
               />
             </picture>
             <h3 class="card__title">From up<br />above VR</h3>
-          </div>
+          </li>
 
-          <div class="card">
+          <li class="card">
             <picture>
               <source
                 media="(max-width: 1199px)"
@@ -191,9 +196,9 @@
               />
             </picture>
             <h3 class="card__title">Pocket<br />borealis</h3>
-          </div>
+          </li>
 
-          <div class="card">
+          <li class="card">
             <picture>
               <source
                 media="(max-width: 1199px)"
@@ -210,9 +215,9 @@
               />
             </picture>
             <h3 class="card__title">The<br />curiosity</h3>
-          </div>
+          </li>
 
-          <div class="card">
+          <li class="card">
             <picture>
               <source
                 media="(max-width: 1199px)"
@@ -229,10 +234,10 @@
               />
             </picture>
             <h3 class="card__title">Make it<br />fisheye</h3>
-          </div>
-        </div>
+          </li>
+        </ul>
 
-        <button class="see-all-btn" type="button">See all</button>
+        <a href="#" class="see-all-btn">See all</a>
       </section>
     </main>
 
@@ -246,18 +251,28 @@
           <li><a href="#">Products</a></li>
           <li><a href="#">Support</a></li>
         </ul>
-        <div class="footer__socials links">
-          <a href="#"
-            ><img src="./images/icon-facebook.svg" alt="Facebook"
-          /></a>
-          <a href="#"><img src="./images/icon-twitter.svg" alt="Twitter" /></a>
-          <a href="#"
-            ><img src="./images/icon-pinterest.svg" alt="Pinterest"
-          /></a>
-          <a href="#"
-            ><img src="./images/icon-instagram.svg" alt="Instagram"
-          /></a>
-        </div>
+        <ul class="footer__socials links">
+          <li>
+            <a href="#"
+              ><img src="./images/icon-facebook.svg" alt="Facebook"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./images/icon-twitter.svg" alt="Twitter"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./images/icon-pinterest.svg" alt="Pinterest"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./images/icon-instagram.svg" alt="Instagram"
+            /></a>
+          </li>
+        </ul>
         <p>© 2021 Loopstudios. All rights reserved.</p>
       </div>
     </footer>
@@ -266,17 +281,16 @@
       const menuToggle = document.getElementById("menuToggle");
       const nav = document.querySelector(".nav");
       const menuImg = menuToggle.querySelector("img");
-      const body = document.body;
 
       function openMenu() {
         nav.classList.add("active");
         menuImg.src = "./images/icon-close.svg";
-        menuImg.alt = "Close Menu";
+        menuToggle.ariaLabel = "Close Menu";
       }
       function closeMenu() {
         nav.classList.remove("active");
         menuImg.src = "./images/icon-hamburger.svg";
-        menuImg.alt = "Open Menu";
+        menuToggle.ariaLabel = "Open Menu";
       }
       // Add event listeners for the menu toggle button
       menuToggle.addEventListener("click", () => {
